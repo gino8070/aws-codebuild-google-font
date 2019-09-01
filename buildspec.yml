@@ -3,7 +3,8 @@ version: 0.2
 env:
   variables:
     NOTE_FONTS_DIR: /usr/share/fonts/opentype/note/
-    NOTE_FONTS_ZIP: https://noto-website-2.storage.googleapis.com/pkgs/NotoSans-unhinted.zip
+    NOTE_FONTS_ZIP: NotoSans-unhinted.zip
+    NOTE_FONTS_URL: https://noto-website-2.storage.googleapis.com/pkgs/${NOTE_FONTS_ZIP}
 
 phases:
   install:
@@ -13,7 +14,7 @@ phases:
       - echo Install started on `date`
       - test -d $NOTE_FONTS_DIR && echo skip install google note fonts || apt-get install --no-install-recommends -y wget unzip
       - test -d $NOTE_FONTS_DIR || cd /tmp
-      - test -d $NOTE_FONTS_DIR || wget $NOTE_FONTS_ZIP
+      - test -d $NOTE_FONTS_DIR || wget $NOTE_FONTS_URL
       - test -d $NOTE_FONTS_DIR || unzip $NOTE_FONTS_ZIP
       - test -d $NOTE_FONTS_DIR || mkdir -p $NOTE_FONTS_DIR
       - test -d $NOTE_FONTS_DIR || cp *otf *otc $NOTE_FONTS_DIR
