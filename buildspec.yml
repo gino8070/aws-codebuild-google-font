@@ -18,12 +18,11 @@ phases:
       - test -d $NOTE_FONTS_DIR || unzip $NOTE_FONTS_ZIP
       - test -d $NOTE_FONTS_DIR || mkdir -p $NOTE_FONTS_DIR
       - test -d $NOTE_FONTS_DIR || cp *otf *otc $NOTE_FONTS_DIR
-      - fc-cache -f -v
 
   build:
     commands:
       - echo Build started on `date`
-      - fc-list
+      - fc-cache -f && fc-list
 
 cache:
   paths:
