@@ -4,7 +4,7 @@ env:
   variables:
     NOTE_FONTS_DIR: /usr/share/fonts/opentype/note/
     NOTE_FONTS_ZIP: NotoSans-unhinted.zip
-    NOTE_FONTS_URL: https://noto-website-2.storage.googleapis.com/pkgs/${NOTE_FONTS_ZIP}
+    NOTE_FONTS_URL: https://noto-website-2.storage.googleapis.com/pkgs/NotoSans-unhinted.zip
 
 phases:
   install:
